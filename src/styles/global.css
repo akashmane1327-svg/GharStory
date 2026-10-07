@@ -102,6 +102,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -110,6 +112,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 img, svg {
@@ -134,11 +139,15 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .main-content {
   flex: 1;
   padding-top: var(--navbar-height);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ── Container ── */
@@ -370,13 +379,20 @@ a {
   display: flex;
   align-items: center;
   overflow: hidden;
-  min-height: 320px;
-  padding-block: calc(var(--navbar-height) + var(--space-5)) var(--space-6);
+  min-height: 240px;
+  padding-block: clamp(28px, 5vw, 44px) clamp(36px, 6vw, 56px);
   background-color: #0b0b0b;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   text-align: left;
+}
+
+@media (min-width: 768px) {
+  .page-banner {
+    min-height: 280px;
+    padding-block: clamp(36px, 6vw, 56px) clamp(44px, 7vw, 68px);
+  }
 }
 
 .page-banner::before {
@@ -418,18 +434,19 @@ a {
   color: #fff;
   margin-top: var(--space-3);
   font-weight: 800;
-  line-height: 1.12;
-  font-size: clamp(2.25rem, 1.6rem + 2.5vw, 3.75rem);
+  line-height: 1.15;
+  font-size: clamp(1.85rem, 1.4rem + 2vw, 3.75rem);
   letter-spacing: -0.02em;
   text-align: left;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  word-break: break-word;
 }
 
 .page-banner__subheading {
   color: var(--color-accent);
   margin-top: var(--space-2);
   font-weight: 600;
-  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+  font-size: clamp(1rem, 0.95rem + 0.5vw, 1.5rem);
   text-align: left;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }

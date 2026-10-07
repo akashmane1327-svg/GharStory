@@ -38,7 +38,7 @@
   border: 0;
   outline: none;
   color: #fff;
-  font-size: 0.9375rem;
+  font-size: 16px;
   padding-right: var(--space-4);
 }
 
@@ -74,11 +74,12 @@
 
 .project-toolbar__controls {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
 }
 
 .project-toolbar__sort {
+  grid-column: 1 / -1;
   position: relative;
   display: flex;
   align-items: center;
@@ -108,7 +109,7 @@
   border: 0;
   outline: none;
   color: #fff;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -164,6 +165,9 @@
 @media (min-width: 640px) {
   .project-toolbar__controls {
     grid-template-columns: 1fr repeat(2, auto);
+  }
+  .project-toolbar__sort {
+    grid-column: auto;
   }
 }
 
