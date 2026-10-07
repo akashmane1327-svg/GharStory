@@ -1,0 +1,107 @@
+/* ── Toolbar wrapper + active filter chips ── */
+.projects-page__main {
+  padding-top: var(--space-8);
+}
+
+.projects-page__toolbar-wrap {
+  margin-bottom: var(--space-5);
+}
+
+.projects-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.projects-page__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.projects-page__chip:hover {
+  background: rgba(212, 175, 55, 0.18);
+}
+
+.projects-page__chip span {
+  font-size: 0.6875rem;
+  opacity: 0.7;
+}
+
+.projects-page__chip-clear {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 6px var(--space-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Result count bar ── */
+.projects-page__result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.projects-page__count {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* ── Grid ── */
+.projects-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 380px));
+  gap: var(--space-6);
+}
+
+/* ── Load more ── */
+.projects-page__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+/* ── Empty state ── */
+.projects-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-9) var(--space-5);
+  background: #111;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.projects-page__empty-icon {
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.projects-page__empty-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.projects-page__empty-text {
+  color: #6b7280;
+  max-width: 380px;
+  margin: 0 0 var(--space-2);
+}

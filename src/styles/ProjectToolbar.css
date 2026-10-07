@@ -1,0 +1,183 @@
+.project-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: #111;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.project-toolbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.project-toolbar__search:focus-within {
+  border-color: var(--color-accent);
+}
+
+.project-toolbar__search-icon {
+  padding-inline: var(--space-4);
+  color: #4b5563;
+  flex-shrink: 0;
+}
+
+.project-toolbar__search-input {
+  flex: 1;
+  height: 100%;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-size: 0.9375rem;
+  padding-right: var(--space-4);
+}
+
+.project-toolbar__search-input::placeholder {
+  color: #4b5563;
+}
+
+.project-toolbar__search-input::-webkit-search-decoration,
+.project-toolbar__search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.project-toolbar__search-clear {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  border-radius: var(--radius-full);
+  background: #1a1a1a;
+  border: 0;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-toolbar__search-clear:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-accent);
+}
+
+.project-toolbar__controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.project-toolbar__sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  padding-inline: var(--space-4);
+  gap: var(--space-2);
+  transition: border-color var(--transition-fast);
+}
+
+.project-toolbar__sort:focus-within {
+  border-color: var(--color-accent);
+}
+
+.project-toolbar__sort-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.project-toolbar__sort-select {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.project-toolbar__sort-select option {
+  background: #111;
+  color: #fff;
+}
+
+.project-toolbar__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 52px;
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg);
+  color: #d1d5db;
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-toolbar__btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.project-toolbar__btn--active {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: var(--color-accent);
+}
+
+.project-toolbar__count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #000;
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .project-toolbar__controls {
+    grid-template-columns: 1fr repeat(2, auto);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-toolbar {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-3);
+  }
+  .project-toolbar__search {
+    flex: 1;
+  }
+  .project-toolbar__controls {
+    grid-template-columns: 220px repeat(2, auto);
+    flex-shrink: 0;
+  }
+}
